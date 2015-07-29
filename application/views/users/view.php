@@ -2,11 +2,6 @@
     select{width:281px;}
     input[type="text"],[type="password"]{height:31px;border:none;}
 </style>
-<script>
-function goBack() {
-    window.history.back();
-}
-</script>
 <?php // print_r($res);?>
 
 <div class="container-fluid">
@@ -102,7 +97,7 @@ function goBack() {
 
                                     <div class="span5" style=" border-left: 2px solid #3c8dbc ;margin-left: 123px;">
                                         <ul class="pager" style="float:right;margin-right: -27%; margin-top: -4%;">
-                                            <li class="previous"><a onclick="goBack()" href="#"><i class="icon-chevron-left"></i> Back</a></li>
+                                            <li class="previous"><a onClick="window.history.back()"><i class="icon-chevron-left"></i> Back</a></li>
                                         </ul>
                                         <ul class="pin_icn" style="margin-left: 167px;margin-bottom: 40px;">
                                             <li>

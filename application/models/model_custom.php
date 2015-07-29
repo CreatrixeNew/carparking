@@ -11,7 +11,7 @@ class model_custom extends CI_Model {
 
         $this->db->select('shift_id,shift_name');
         $this->db->from('cp_shifts');
-        $this->db->where('shift_status', 1);
+//        $this->db->where('shift_status', 1);
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result_array();
@@ -24,7 +24,7 @@ class model_custom extends CI_Model {
 
         $this->db->select('contract_id,contract_name');
         $this->db->from('cp_contracts');
-        $this->db->where('contract_status', 1);
+//        $this->db->where('contract_status', 1);
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result_array();
@@ -37,7 +37,7 @@ class model_custom extends CI_Model {
 
         $this->db->select('airport_id,airport_name');
         $this->db->from('cp_airports');
-        $this->db->where('airport_status', 1);
+//        $this->db->where('airport_status', 1);
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result_array();

@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/carparking/';
+$config['base_url']	= 'http://localhost/car_parking/';
 
 /*
 |--------------------------------------------------------------------------

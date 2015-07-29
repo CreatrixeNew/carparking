@@ -144,12 +144,14 @@
                                         <div class="control-group">
                                             <label class="control-label">Assign Contract</label>
                                             <div class="controls">
+                                                <?php // $cont = getContractList();
+//                                                    print_r(getContractList());?>
                                                 <select name="user_contract">
                                                    <?php 
                                                     $uc =  $res[0]['user_contract'];
-                                                    $shift = getContractList();
-                                                    $count=0;
-                                                    foreach($shift as $sh){
+                                                    $cont = getContractList();
+//                                                    print_r(getContractList());
+                                                    foreach($cont as $sh){
                                                     ?>
                                                     <option <?php if($sh['contract_id'] == $uc && $uc !=""){ ?> selected <?php } ?> value="<?php echo $sh['contract_id']; ?>">
                                                         <?php echo $sh['contract_name']; ?></option>

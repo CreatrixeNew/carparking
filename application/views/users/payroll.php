@@ -20,10 +20,10 @@
                             <div class="widget-content">
                     
                                 <div class="widget-box">
-                                    <table class="data-tbl-tools table">
+                                    <table class="data-tbl-tools table" style="font-size:12px;">
                                         <thead>
-                                            <tr>
-                                                <th class="center"> Employee ID
+                                            <tr style="font-size:12px;">
+                                                <th class="center"> ID
                                                 </th>
                                                 <th class="center"> User </th>
                                                 <th class="center"> Bio </th>

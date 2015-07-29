@@ -4,7 +4,7 @@
     tr{background: white;
     text-align: center;}
 </style>
-<div class="span12 " style="margin-left:-1px">
+<div class="span12 " style="margin-left:-1px;font-size:12px;">
     <div class="widget-block">
         <div class="widget-head">
             <h5><i class="black-icons users"></i> All Employees</h5>

@@ -135,8 +135,8 @@
 		</li>
 		<li><a href="#"><span class="color-icons user_business_co"></span>Employee Management</a>
                     
-                    
-			<ul class="acitem" id="sub_employees" <?php if($page == "users"){ ?> style="display:block !important;" <?php }?>>
+                     
+			<ul class="acitem" id="employees_sub" >
 				<li><a href="<?php echo base_url().'users/add'?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add Employee</a></li>
 				<li><a href="<?php echo base_url().'users/manage'?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Employee List</a></li>
 				<li><a href="<?php echo base_url().'users/payroll'?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Payroll </a></li>

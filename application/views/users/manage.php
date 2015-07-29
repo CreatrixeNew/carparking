@@ -32,13 +32,13 @@
 //            alert(data);
 //            user_status = "";
 
-            Activate = "<span class='label label-success'>Active</span>";
+            Activate = '<span class="label label-success">Active</span>';
 //                  alert(pics);
 
             if (data == Activate) {
 //                      alert("Active this user");
                 $("#status_" + id).html("<span class='label label-important'>Inactive</span>");
-                $("#publish_" + id).html(Activate);
+                $("#publish_" + id).html("<i class='icon-trash'></i>Activate User");
                 user_status = 0;
 //                alert(user_status);
             }
@@ -46,7 +46,7 @@
                 $("#status_" + id).html("<span class='label label-success'>Active</span>");
                 $("#publish_" + id).html("<i class='icon-trash'></i>Deactivate User");
                 user_status = 1;
-//                alert(user_status);
+                alert(user_status);
             }
 
             url = '<?php echo base_url() . 'users/publish'; ?>';
@@ -137,9 +137,9 @@
                 <div class="widget-content">
 
                     <div class="widget-box">
-                        <table class="data-tbl-tools table">
+                        <table class="data-tbl-tools table" style="font-size:12px;">
                             <thead>
-                                <tr>
+                                <tr style="font-size:12px;">
                                     <th class="center"> ID </th>
                                     <th class="center"> User </th>
                                     <th class="center"> Bio </th>
@@ -183,14 +183,14 @@
                                                 $button = "Activate User";
                                             }
                                             ?>
-                                            <td id="status_<?php echo $row['user_id']; ?>"><span class="label <?php echo $class ?>"><?php echo $status; ?></span></td>
+                                            <td id="status_<?php echo $row['user_id']; ?>"><span class='label <?php echo $class ?>'><?php echo $status; ?></span></td>
                                             <td style="text-align:center;"><?php echo $row['user_phone']; ?></td>
                                             <td><div class="btn-group center">
                                                     <button data-toggle="dropdown" class="btn dropdown-toggle"><i class="icon-cog"></i><span class="caret"></span></button>
                                                     <ul class="dropdown-menu" style="text-align:left">
-                                                        <li><a href="<?php echo base_url() . "users/view/id/" . $row['user_id'] ?>" target="_blank"><i class="icon-file"></i> View Details</a></li>
+                                                        <li><a href="<?php echo base_url() . "users/view/id/" . $row['user_id'] ?>" ><i class="icon-file"></i> View Details</a></li>
                                                         <li><a href="<?php echo base_url() . "users/edit/id/" . $row['user_id'] ?>" target="_blank"><i class="icon-edit"></i> Edit Profile</a></li>
-                                                        <li><a id="publish_<?php echo $row['user_id'] ?>" href="#"><i class='icon-trash'></i><?php echo $button ?></a></li>
+                                                        <li><a id="publish_<?php echo $row['user_id'] ?>"><i class='icon-trash'></i><?php echo $button ?></a></li>
                                                         <li><a href="#"><i class="icon-minus-sign"></i> Job History</a></li>
                                                     </ul>
                                                 </div></td>
