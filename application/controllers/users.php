@@ -52,6 +52,7 @@ class users extends CI_Controller {
         $data['user_last_name'] = addslashes($this->input->post('user_last_name'));
         $data['user_gender'] = addslashes($this->input->post('user_gender'));
         $data['user_type'] = addslashes($this->input->post('user_type'));
+        $data['user_dob'] = addslashes($this->input->post('user_dob'));
         $data['user_email'] = addslashes($this->input->post('user_email'));
         $passwd = $this->input->post('user_password');
         $hash_passwd = generatePassword($passwd);
@@ -123,12 +124,14 @@ class users extends CI_Controller {
         $data = array();
         $loggedInUserId = $this->session->userdata('user_id');
         $airports = $this->input->post('user_airports');
+        $this->model_users->deletePreviousAirports($id);
         foreach ($airports as $a) {
             $a_data['assign_airport_id'] = $a;
             $a_data['assign_user_id'] = $id;
             $result = $this->model_users->addAirports($a_data);
         }
         $data['user_shift'] = addslashes($this->input->post('user_shift'));
+        $data['user_contract'] = addslashes($this->input->post('user_contract'));
         $data['user_image'] = addslashes($this->input->post('hidden_file'));
         $data['user_salary_rate'] = addslashes($this->input->post('user_salary_rate'));
         $data['user_bank_name'] = addslashes($this->input->post('user_bank_name'));

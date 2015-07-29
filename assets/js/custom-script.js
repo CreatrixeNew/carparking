@@ -789,51 +789,51 @@ $(function()
     });
 });
 
-$(function()
-{
-
-    var href = window.location.href;
-    var  file = href.substr(href.lastIndexOf('/') + 1);
-    
-    if (file=="completed_jobs.html" || file == "incompleted_jobs.html" || file == "completed_jobs_details.html" || file == "unassigned_jobs.html" || file == "movements.html" || file == "booking_monitor.html" || file == "daily_monitor.html" || file == "assigned_jobs.html") 
-    {
-        $("#sub_operations").css('display', 'block');
-//        alert(file);
-    }
-     if (file=="add_employee.html" || file == "all_employees.html" || file == "payroll.html") 
-    {
-        $("#sub_employees").css('display', 'block');
-//        alert(file);
-    }
-	 if (file=="company_setup.html" || file == "access_controller.html" ) 
-    {
-         $("#company_setup").css('display', 'block');
-//        alert(file);
-    }
-	 if (file=="all_airports.html" || file == "add_airport.html" ) 
-    {
- 		$("#company_setup").css('display', 'block');
-		$("#airport_setup").css('display', 'block');
-//        alert(file);
-    }
-     if (file=="inbox.html") 
-    {
-        $("#sub_messages").css('display', 'block');
-//        alert(file);
-    }
-    
-     if (file=="assign_job.html" || file=="assign_shift.html") 
-    {
-        $("#sub_assign").css('display', 'block');
-//        alert(file);
-    }
-    
-      if (file=="monthly_report.html" || file=="vehicle_report.html" || file=="space_report.html" || file=="salary_report.html" || file=="return_report.html" || file=="entry_report.html" || file=="driver_report.html" || file=="attendance_report.html" || file=="damage_report.html") 
-    {
-        $("#sub_reports").css('display', 'block');
-//        alert(file);
-    }
-});  
+//$(function()
+//{
+//
+//    var href = window.location.href;
+//    var  file = href.substr(href.lastIndexOf('/') + 1);
+//    
+//    if (file=="completed_jobs.html" || file == "incompleted_jobs.html" || file == "completed_jobs_details.html" || file == "unassigned_jobs.html" || file == "movements.html" || file == "booking_monitor.html" || file == "daily_monitor.html" || file == "assigned_jobs.html") 
+//    {
+//        $("#sub_operations").css('display', 'block');
+////        alert(file);
+//    }
+//     if (file=="add_employee.html" || file == "all_employees.html" || file == "payroll.html") 
+//    {
+//        $("#sub_employees").css('display', 'block');
+////        alert(file);
+//    }
+//	 if (file=="company_setup.html" || file == "access_controller.html" ) 
+//    {
+//         $("#company_setup").css('display', 'block');
+////        alert(file);
+//    }
+//	 if (file=="all_airports.html" || file == "add_airport.html" ) 
+//    {
+// 		$("#company_setup").css('display', 'block');
+//		$("#airport_setup").css('display', 'block');
+////        alert(file);
+//    }
+//     if (file=="inbox.html") 
+//    {
+//        $("#sub_messages").css('display', 'block');
+////        alert(file);
+//    }
+//    
+//     if (file=="assign_job.html" || file=="assign_shift.html") 
+//    {
+//        $("#sub_assign").css('display', 'block');
+////        alert(file);
+//    }
+//    
+//      if (file=="monthly_report.html" || file=="vehicle_report.html" || file=="space_report.html" || file=="salary_report.html" || file=="return_report.html" || file=="entry_report.html" || file=="driver_report.html" || file=="attendance_report.html" || file=="damage_report.html") 
+//    {
+//        $("#sub_reports").css('display', 'block');
+////        alert(file);
+//    }
+//});  
 
 $(function()
 {

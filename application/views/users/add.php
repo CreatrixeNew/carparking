@@ -112,7 +112,7 @@
                                         <div class="control-group">
                                             <label class="control-label" for="input01">Email:</label>
                                             <div class="controls">
-                                                <input id="user_email" name="user_email" type="text" class="input-xlarge text-tip" id="input01" title="Enter Email">
+                                                <input id="user_email" name="user_email" type="text" class="input-xlarge text-tip" title="Enter Email">
                                             </div>
                                         </div>
                                         <div class="control-group">

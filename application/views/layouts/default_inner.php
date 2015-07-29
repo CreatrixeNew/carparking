@@ -57,7 +57,7 @@
 <script src="<?php echo base_url(); ?>assets/js/respond.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/ios-orientationchange-fix.js"></script>
 </head>
-<?php // echo "hi"; ?>
+
 <body>
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner top-nav">
@@ -92,7 +92,7 @@
 		</div>
 	</div>
 </div>
-<div id="sidebar">
+<div id="sidebar"><?php $page = $this->uri->segment(1); ?>
 	<ul class="side-nav accordion_mnu collapsible">
 		<li><a href="admin_dashboard.html"><span class="color-icons computer_co"></span> Dashboard</a></li>
 		<li ><a href="#"><span class="color-icons cog_co"></span> Operations</a>
@@ -134,7 +134,9 @@
 			</ul>
 		</li>
 		<li><a href="#"><span class="color-icons user_business_co"></span>Employee Management</a>
-			<ul class="acitem" id="sub_employees">
+                    
+                    
+			<ul class="acitem" id="sub_employees" <?php if($page == "users"){ ?> style="display:block !important;" <?php }?>>
 				<li><a href="<?php echo base_url().'users/add'?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add Employee</a></li>
 				<li><a href="<?php echo base_url().'users/manage'?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Employee List</a></li>
 				<li><a href="<?php echo base_url().'users/payroll'?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Payroll </a></li>

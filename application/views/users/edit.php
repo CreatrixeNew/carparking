@@ -110,13 +110,13 @@
                                         <div class="control-group">
                                             <label class="control-label" for="input01">Phone:</label>
                                             <div class="controls">
-                                                <input value="<?php echo $res[0]['user_phone']; ?>" required id="user_phone" name="user_phone" type="text" class="input-xlarge text-tip" id="input01" title="Enter Phone Number">
+                                                <input value="<?php echo $res[0]['user_phone']; ?>" required id="user_phone" name="user_phone" type="text" class="input-xlarge text-tip" title="Enter Phone Number">
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="input01">Email:</label>
                                             <div class="controls">
-                                                <input value="<?php echo $res[0]['user_email']; ?>" id="user_email" name="user_email" type="text" class="input-xlarge text-tip" id="input01" title="Enter Email">
+                                                <input value="<?php echo $res[0]['user_email']; ?>" id="user_email" name="user_email" type="text" class="input-xlarge text-tip" title="Enter Email">
                                             </div>
                                         </div>
                                         <div class="control-group">
@@ -142,18 +142,56 @@
                                             </li>
                                         </ul>
                                         <div class="control-group">
-                                            <label class="control-label">Assign Shift</label>
+                                            <label class="control-label">Assign Contract</label>
                                             <div class="controls">
-                                                <select name="user_shift">
-                                                    <?php echo getshifts(); ?>
+                                                <select name="user_contract">
+                                                   <?php 
+                                                    $uc =  $res[0]['user_contract'];
+                                                    $shift = getContractList();
+                                                    $count=0;
+                                                    foreach($shift as $sh){
+                                                    ?>
+                                                    <option <?php if($sh['contract_id'] == $uc && $uc !=""){ ?> selected <?php } ?> value="<?php echo $sh['contract_id']; ?>">
+                                                        <?php echo $sh['contract_name']; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="control-group">
+                                            <label class="control-label">Assign Shift</label>
+                                            <div class="controls">
+                                                <select name="user_shift">
+                                                    <?php 
+                                                    $us =  $res[0]['user_shift'];
+                                                    $shift = getshiftList();
+                                                    $count=0;
+                                                    foreach($shift as $sh){
+                                                    ?>
+                                                    <option <?php if($sh['shift_id'] == $us && $us !=""){ ?> selected <?php } ?> value="<?php echo $sh['shift_id']; ?>">
+                                                        <?php echo $sh['shift_name']; ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="control-group">
                                             <label class="control-label">Assign Airports</label>
                                             <div class="controls">
                                                 <select name="user_airports[]" multiple="multiple">
-                                                    <?php echo getAirports(); ?>
+                                                    <?php $result = getAirportList(); 
+                                                    $user_airports = getEmployeeAirports($res[0]['user_id']);
+                                                    
+                                                            foreach($result as $s){                                                                                                                        
+                                                               
+                                                           ?>
+                                                      <option  <?php  foreach($user_airports as $a){ 
+
+                                                                if($a['airport_id']==$s['airport_id']){ ?>
+                                                                    selected  
+                                                      <?php }}?> value="<?php echo $s['airport_id']?>"><?php echo $s['airport_name']; ?></option>
+                 
+                                                        <?php }
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>
