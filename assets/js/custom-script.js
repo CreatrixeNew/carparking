@@ -471,7 +471,7 @@ $(function() {
                 minlength: 5,
                 equalTo: "#user_password"
             },
-            user_email: {
+            blabla: {
                 required: true,
                 email: true
                 
@@ -496,7 +496,7 @@ $(function() {
                 minlength: jQuery.format("Enter at least {0} characters"),
                 equalTo: "Enter the same password as above"
             },
-            user_email: {
+            blabla: {
                 required: "Please enter a valid email address",
                 minlength: "Please enter a valid email address"
             }

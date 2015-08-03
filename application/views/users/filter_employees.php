@@ -15,15 +15,15 @@
                 <table class="data-tbl-tools table">
                     <thead>
                         <tr>
-                            <th class="center"> ID </th>
-                            <th class="center"> User </th>
-                            <th class="center"> Bio </th>
-                            <th> Shift </th>
-                            <th> Job Type </th>
-                            <th> Salary </th>
-                            <th> Status </th>
-                            <th style="text-align:center;"> Contact</th>
-                            <th class="center"> Action </th>
+                              <th class="center"> ID </th>
+                                    <th class="center"> Image </th>
+                                    <th class="center"> User Info </th>
+                                    <th> Shift </th>
+                                    <th> Contract Type </th>
+                                    <th> Salary </th>
+                                    <th> Status </th>
+                                    <th style="text-align:center;"> Contact</th>
+                                    <th class="center"> Action </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,12 +35,12 @@
                                     <td class="center"><span class="user-thumb">
                                             <?php
                                             if ($row['user_image'] == NULL || $row['user_image'] == "") {
-                                                $pic = "thumb_dummy.jpg";
+                                                $pic = "dummy.jpg";
                                             } else {
                                                 $pic = $row['user_image'];
                                             }
                                             ?>
-                                            <img src="<?php echo base_url() . "uploads/user_images/thumbs/thumb_" . $pic; ?>" width="40" height="40" alt="User">
+                                            <img src="<?php echo base_url() . "uploads/user_images/" . $pic; ?>" width="40" height="40" alt="User">
                                         </span></td>
                                     <td  class="center"><?php echo $row['user_first_name'] . $row['user_last_name']; ?><span class="user-position"><?php echo ucfirst($row['user_type']); ?></span></td>
                                     <td><?php getUserShift($row['user_id']); ?></td>

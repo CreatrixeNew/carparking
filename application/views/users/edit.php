@@ -15,13 +15,15 @@
                             alert(data.error);
                             $('#user_image').val('');
                         } else {
+                            
                             var a = data.msg;
-                            var imagename = a.replace("_thumb", "");
+                            var imagename = a.replace("thumb_", "");
                             $('#hidden_file').val(imagename);
                         }
                     }
                 },
                 error: function(data, status, e) {
+                    
                     $('#user_image').val('');
                     alert(e);
                 }
@@ -38,13 +40,13 @@
     <ul class="breadcrumb">
         <li><a href="#">Car Parking</a><span class="divider">&raquo;</span></li>
         <li><a href="#">Employee Management</a><span class="divider">&raquo;</span></li>
-        <li class="active">Add Employee </li>
+        <li class="active">Update Employee </li>
     </ul>
     <div class="row-fluid">
         <div class="span12">
             <div class="widget-block">
                 <div class="widget-head">
-                    <h5>Add New Employee</h5>
+                    <h5>Update Employee</h5>
                 </div>
                 <div class="widget-content">
                     <div class="widget-box">

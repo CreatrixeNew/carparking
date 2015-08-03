@@ -50,11 +50,12 @@ class DatabaseLoader {
 
                  $CI->db = $CI->load->database('default', TRUE);
                  $CI->db2 = $CI->load->database('defaulttwo', TRUE);
+                 
+                 
          }
 }
 
 $autoload['packages'] = array();
-
 
 /*
 | -------------------------------------------------------------------

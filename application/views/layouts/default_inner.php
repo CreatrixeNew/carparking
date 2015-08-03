@@ -57,7 +57,7 @@
 <script src="<?php echo base_url(); ?>assets/js/respond.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/ios-orientationchange-fix.js"></script>
 
-            <script type="text/javascript" CHARSET="utf-8">
+            <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
         
          var pathArray = window.location.pathname.split( '/' );
@@ -67,33 +67,6 @@
      if (file=="users") 
     {
         $("#employees_sub").css('display', 'block');
-    }
-	if ( pathArray[2].indexOf("company_setup") > -1)
-    {
-        $("#company_setup").css('display', 'block');
-    }
-	if ( ( pathArray[2].indexOf("access") > -1 ) || (pathArray[2].indexOf("assign") > -1)) {
-        $("#company_setup").css('display', 'block');
-    }
-	if (  pathArray[2].indexOf("airport") > -1 )  {
-        $("#company_setup").css('display', 'block');
-		$("#airport_setup").css('display', 'block');
-    }
-	if (  pathArray[3].indexOf("yard") > -1 )  {
-		$("#airport_setup").css('display', 'none');
-        $("#company_setup").css('display', 'block');
-		$("#yard_setup").css('display', 'block');
-    }
-	if (  pathArray[3].indexOf("terminal") > -1 )  {
-		$("#airport_setup").css('display', 'none');
-        $("#company_setup").css('display', 'block');
-		$("#terminal_setup").css('display', 'block');
-    }
-	if (  pathArray[3].indexOf("zone") > -1 )  {
-		$("#airport_setup").css('display', 'none');
-        $("#company_setup").css('display', 'block');
-		$("#yard_setup").css('display', 'block');
-		$("#zone_setup").css('display', 'block');
     }
     
    $('#datepicker').datepicker(
@@ -211,38 +184,30 @@
 				<li><a href="cancel_jobs.html"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span> Cancel Jobs</a></li>
 			</ul>
 		</li>
-		<li><a href="#" ><span class="color-icons buildings_co"></span>Company setup</a>
+		<li><a href="#"><span class="color-icons house_co"></span>Company setup</a>
 			<ul class="acitem" id="company_setup">
-				<li><a href="<?php echo base_url()."company_setup/" ?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Company Settings </a></li>
-				<li><a href="<?php echo base_url()."access_controller/" ?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span> Access Control List </a></li>
-				<li><a href="#" ><span class="black-icons companies" ></span> Yards</a>
-					<ul class="acitem" id="yard_setup">
-						<li><a href="<?php echo base_url()."airport/yards" ?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>View Yards</a></li>
-						<li><a href="<?php echo base_url()."airport/yard_add" ?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add Yard</a></li>
-						<li><a href="#"><span class="color-icons zone_co" ></span></span> Zones</a>
-							<ul class="acitem" id="zone_setup">
-								<li><a href="<?php echo base_url()."airport/zones" ?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>View Zones</a></li>
-								<li><a href="<?php echo base_url()."airport/zone_add" ?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add Zone</a></li>
-							</ul>
-						</li>
+				<li><a href="company_setup"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Company Settings </a></li>
+				<li><a href="access_controller"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span> Access Control List </a></li>
+				<li><a href="#"><span class="black-icons airplane" id="airport_setup"></span> Airports</a>
+					<ul class="acitem" id="sub_employees">
+						<li><a href="all_airports"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>View Airports</a></li>
+						<li><a href="add_airport"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add Airport</a></li>
 					</ul>
 				</li>
-				
-				<li><a href="#"><span class="black-icons apartment_building"></span> Terminals</a>
-					<ul class="acitem" id="terminal_setup">
-						<li><a href="<?php echo base_url()."airport/terminals" ?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>View Terminals</a></li>
-						<li><a href="<?php echo base_url()."airport/terminal_add" ?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add Terminal</a></li>
+				<li><a href="#"><span class="color-icons car_co"  id="yard_setup"></span> Yards</a>
+					<ul class="acitem" id="sub_employees">
+						<li><a href="all_yards.html"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>View Yards</a></li>
+						<li><a href="add_yard.html"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add Yard</a></li>
 					</ul>
 				</li>
-				<li><a href="#"><span class="black-icons airplane" ></span> Airports</a>
-					<ul class="acitem" id="airport_setup">
-						<li><a href="<?php echo base_url()."airport/" ?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>View Airports</a></li>
-						<li><a href="<?php echo base_url()."airport/airport_add" ?>"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add Airport</a></li>
+				<li><a href="#"><span class="color-icons vcard_co" id="terminal_setup"></span> Terminals</a>
+					<ul class="acitem" id="sub_employees">
+						<li><a href="all_terminals.html"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>View Terminals</a></li>
+						<li><a href="add_terminal.html"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add Terminal</a></li>
 					</ul>
 				</li>
-			
-<?php /*?>				<li><a href="qrcode.html" id="qrcode_setup"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span><i class="icon-qrcode"></i>&nbsp;&nbsp;QR Codes</a></li>
-				<li><a href="barcode.html" id="barcode_setup"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span><i class="icon-barcode"></i>&nbsp;&nbsp;Barcodes</a></li><?php */?>
+				<li><a href="qrcode.html" id="qrcode_setup"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span><i class="icon-qrcode"></i>&nbsp;&nbsp;QR Codes</a></li>
+				<li><a href="barcode.html" id="barcode_setup"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span><i class="icon-barcode"></i>&nbsp;&nbsp;Barcodes</a></li>
 			</ul>
 		</li>
 		<li><a href="#"><span class="color-icons user_business_co"></span>Employee Management</a>

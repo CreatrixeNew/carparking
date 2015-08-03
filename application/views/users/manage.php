@@ -1,7 +1,35 @@
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
         M_PATH = '<?php echo base_url(); ?>';
+        
+        
+        value =  $("#table_search").html();
+        value = $.trim(value);
+//        alert(value);
+        
+        if(value == "ID"){
+            $("#table_search").html(value).removeAttr('class');
+        }
+        
+        valueClass =  $(".center sorting").html();
+        valueClass = $.trim(value);       
+        
+        if(valueClass == "Contact"){
+            alert(valueClass);
+            $("#table_search").html(valueClass).removeAttr('class');
+        }
 
+  $("#filtered_table").click(function() {
+      
+      value =  $("#table_search").html();
+        value = $.trim(value);
+        
+//       if(value == "ID"){
+//            alert(value);
+            $("#table_search").html(value).removeAttr('class');
+//        }
+      
+    });
         $("#sort").click(function() {
 
             date = $("#datepicker").val();
@@ -155,10 +183,10 @@
                             <thead>
                                 <tr style="font-size:12px;">
                                     <th class="center"> ID </th>
-                                    <th class="center"> User </th>
-                                    <th class="center"> Bio </th>
+                                    <th class="center"> Image </th>
+                                    <th class="center"> User Info </th>
                                     <th> Shift </th>
-                                    <th> Job Type </th>
+                                    <th> Contract Type </th>
                                     <th> Salary </th>
                                     <th> Status </th>
                                     <th style="text-align:center;"> Contact</th>
@@ -175,14 +203,14 @@
                                             <td class="center"><span class="user-thumb">
                                                     <?php
                                                     if ($row['user_image'] == NULL || $row['user_image'] == "") {
-                                                        $pic = "thumb_dummy.jpg";
+                                                        $pic = "dummy.jpg";
                                                     } else {
                                                         $pic = $row['user_image'];
                                                     }
                                                     ?>
-                                                    <img src="<?php echo base_url() . "uploads/user_images/thumbs/thumb_" . $pic; ?>" width="40" height="40" alt="User">
+                                                    <img src="<?php echo base_url() . "uploads/user_images/" . $pic; ?>" width="40" height="40" alt="User">
                                                 </span></td>
-                                            <td  class="center"><?php echo $row['user_first_name'] . $row['user_last_name']; ?><span class="user-position"><?php echo ucfirst($row['user_type']); ?></span></td>
+                                            <td  class="center"><?php echo $row['user_first_name'] ." ". $row['user_last_name']; ?><span class="user-position"><?php echo ucfirst($row['user_type']); ?></span></td>
                                             <td><?php getUserShift($row['user_id']); ?></td>
                                             <td><?php getUserContract($row['user_id']); ?></td>
                                             <td ><?php echo "$" . $row['user_salary_rate']; ?></td>

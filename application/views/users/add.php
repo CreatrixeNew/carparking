@@ -1,41 +1,49 @@
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
 
-    $(document).on('change', '#user_image', function() {
-    $.ajaxFileUpload({
-    url: '<?php echo base_url(); ?>users/uploadFile',
-            secureuri: false,
-            fileElementId: 'user_image',
-            dataType: 'json',
-            success: function(data, status) {
+        $(document).on('change', '#user_image', function() {
+            $.ajaxFileUpload({
+                url: '<?php echo base_url(); ?>users/uploadFile',
+                secureuri: false,
+                fileElementId: 'user_image',
+                dataType: 'json',
+                success: function(data, status) {
 
-            if (typeof (data.error) != 'undefined') {
-            if (data.error != '') {
-            alert(data.error);
+                    if (typeof (data.error) != 'undefined') {
+                        if (data.error != '') {
+                            alert(data.error);
+                            $('#user_image').val('');
+                        } else {
+                            var a = data.msg;
+                            var imagename = a.replace("_thumb", "");
+                            $('#hidden_file').val(imagename);
+                        }
+                    }
+                },
+                error: function(data, status, e) {
                     $('#user_image').val('');
-            } else {
-            var a = data.msg;
-                    var imagename = a.replace("_thumb", "");
-                    $('#hidden_file').val(imagename);
-            }
-            }
-            },
-            error: function(data, status, e) {
-            $('#user_image').val('');
                     alert(e);
-            }
-    });
-    });
-            $("#saveBio").click(function(){
-    $('#myform').validate({
-    rules: {
-    user_password: 'required',
-            user_c_password: {
-            equalTo: '#user_password'
-            }
-    }
-    });
-    });
+                }
+            });
+        });
+        $("#saveBio").click(function() {
+            $('#myform').validate({
+                rules: {
+                    user_password: 'required',
+                    user_c_password: {
+                        equalTo: '#user_password'
+                    },
+                    blabla: {
+                        email: true
+                    }
+
+                }, messages: {
+                    blabla: {
+                        email: 'Please enter a valid email address'
+                    }
+                }
+            });
+        });
     });
 </script>
 <style>
@@ -112,7 +120,7 @@
                                         <div class="control-group">
                                             <label class="control-label" for="input01">Email:</label>
                                             <div class="controls">
-                                                <input required id="blabla" name="blabla" type="text" class="span10" title="Enter Email">
+                                                <input required id="blabla" name="blabla" type="text" class="span10" title="Enter Valid Email">
                                             </div>
                                         </div>
                                         <div class="control-group">

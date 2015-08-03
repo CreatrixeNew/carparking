@@ -97,7 +97,7 @@
 
                                     <div class="span5" style=" border-left: 2px solid #3c8dbc ;margin-left: 123px;">
                                         <ul class="pager" style="float:right;margin-right: -27%; margin-top: -4%;">
-                                            <li class="previous"><a onClick="window.history.back()" ><i class="icon-chevron-left"></i> Back</a></li>
+                                            <li class="previous"><a onClick="window.history.back()"><i class="icon-chevron-left"></i> Back</a></li>
                                         </ul>
                                         <ul class="pin_icn" style="margin-left: 167px;margin-bottom: 40px;">
                                             <li>

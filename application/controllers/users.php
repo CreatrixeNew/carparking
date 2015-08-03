@@ -23,10 +23,29 @@ class users extends CI_Controller {
         $this->load->view('users/manage',$data);
     }
     
+    public function proceedPayment() {
+        $id = $this->uri->segment(4);
+        $this->load->model('model_users');
+        if ($id) {
+        $data['res'] = $this->model_users->get_user_by_id($id);
+         $this->load->view('users/proceed_payment', $data);
+        }
+    }
+    
     public function payroll() {
         $this->load->model('model_users');
         $data['res'] = $this->model_users->fetchAllEmployees();
         $this->load->view('users/payroll',$data);
+    }
+    
+     public function calculator() {
+        $this->layout = "default_inner";
+        $id = $this->uri->segment(4);
+        $this->load->model('model_users');
+        if ($id) {
+            $data['res'] = $this->model_users->get_user_by_id($id);
+            $this->load->view('users/calculator', $data);
+        }
     }
     
     public function filterEmployees($status) {
@@ -36,6 +55,17 @@ class users extends CI_Controller {
         $this->load->model('model_users');
         $data['res'] = $this->model_users->fetchFilterEmployees($status);
         $this->load->view('users/filter_employees',$data);
+    }
+    
+        public function sortEmployees($status) {
+        $this->layout = 'empty.php';
+        $date= $_GET['date'];
+        $order= $_GET['sortBy'];
+//        print_r($order.$date);exit;
+        $this->load->model('model_users');
+        $data['res'] = $this->model_users->fetchSortEmployees($date,$order);
+//        print_r($data);exit;
+        $this->load->view('users/sort_employees',$data);
     }
 
     public function add() {
@@ -53,7 +83,7 @@ class users extends CI_Controller {
         $data['user_gender'] = addslashes($this->input->post('user_gender'));
         $data['user_type'] = addslashes($this->input->post('user_type'));
         $data['user_dob'] = addslashes($this->input->post('user_dob'));
-        $data['user_email'] = addslashes($this->input->post('user_email'));
+        $data['user_email'] = addslashes($this->input->post('blabla'));
         $passwd = $this->input->post('user_password');
         $hash_passwd = generatePassword($passwd);
         $data['user_password'] = $hash_passwd;
@@ -66,10 +96,10 @@ class users extends CI_Controller {
         $data['user_image'] = '';
         $data['user_salary_rate'] = '';
         $data['user_bank_name'] = '';
-        $data['user_email'] = '';
         $data['user_account_title'] = '';
         $data['user_account_numb'] = '';
         $result = $this->model_users->saveBio($data);
+        
         // Assigning full rights on profile creation 
 		$this->load->model('model_acl');
 		$this->model_acl->default_user_rights(  $result );
@@ -98,7 +128,7 @@ class users extends CI_Controller {
         } else {
             $data2['upload_data'] = $this->upload->data();
             $data = $data2['upload_data']['file_name'];
-            $thumbnail = 'thumb_' . $data2['upload_data']['raw_name'] . $data2['upload_data']['file_ext'];
+            $thumbnail = $data2['upload_data']['raw_name'] . $data2['upload_data']['file_ext'];
             $libconfig['image_library'] = 'gd2';
             $libconfig['source_image'] = 'uploads/user_images/' . $data2['upload_data']['file_name'];
             $libconfig['quality'] = "100%";
@@ -140,12 +170,13 @@ class users extends CI_Controller {
         $data['user_account_numb'] = addslashes($this->input->post('user_account_numb'));
         $data['user_updated_at'] = date('Y-m-d H:i:s');
         $data['user_updated_by'] = $loggedInUserId;
+//        print_r($data);exit;
         $result = $this->model_users->saveDetails($data, $id);
         $data2['user_id'] = $result;
         if ($result) {
             $this->session->set_flashdata('message', 'Employee Job Settings Updated Successfully.');
         }
-        redirect($this->config->item('base_url') . 'users/edit/id/' . $id);
+        redirect($this->config->item('base_url') . 'users/manage');
     }
 
     public function edit() {

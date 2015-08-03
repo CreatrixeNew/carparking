@@ -64,20 +64,20 @@ $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
 
-$db2['defaulttwo']['hostname'] = 'localhost';//'10.6.40.20';
-$db2['defaulttwo']['username'] = 'root';//'orbitksa_com';
-$db2['defaulttwo']['password'] = '';//orbitksa_comorbitksa_comorbitksa_com';
-$db2['defaulttwo']['database'] = 'attiehgroup_com_web';//orbitksa_com';
-$db2['defaulttwo']['dbdriver'] = 'mysql';
-$db2['defaulttwo']['dbprefix'] = '';
-$db2['defaulttwo']['pconnect'] = FALSE;
-$db2['defaulttwo']['db_debug'] = TRUE;
-$db2['defaulttwo']['cache_on'] = FALSE;
-$db2['defaulttwo']['cachedir'] = '';
-$db2['defaulttwo']['char_set'] = 'utf8';
-$db2['defaulttwo']['dbcollat'] = 'utf8_general_ci';
-$db2['defaulttwo']['swap_pre'] = '';
-$db2['defaulttwo']['autoinit'] = TRUE;
-$db2['defaulttwo']['stricton'] = FALSE;
+$db['defaulttwo']['hostname'] = '217.199.187.194';
+$db['defaulttwo']['username'] = 'cl55-fcpmulti';
+$db['defaulttwo']['password'] = 'JBd-y.s7X';
+$db['defaulttwo']['database'] = 'cl55-fcpmulti';
+$db['defaulttwo']['dbdriver'] = 'mysql';
+$db['defaulttwo']['dbprefix'] = '';
+$db['defaulttwo']['pconnect'] = FALSE;
+$db['defaulttwo']['db_debug'] = TRUE;
+$db['defaulttwo']['cache_on'] = FALSE;
+$db['defaulttwo']['cachedir'] = '';
+$db['defaulttwo']['char_set'] = 'utf8';
+$db['defaulttwo']['dbcollat'] = 'utf8_general_ci';
+$db['defaulttwo']['swap_pre'] = '';
+$db['defaulttwo']['autoinit'] = TRUE;
+$db['defaulttwo']['stricton'] = FALSE;
 /* End of file database.php */
 /* Location: ./application/config/database.php */

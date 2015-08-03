@@ -164,24 +164,7 @@ class model_users extends CI_Model {
             return false;
         }
     }
-	/*
-	* @desc: get user(s) by id
-	* @param: array of user id's, status of user (1 for enable or 0 for disabled)
-	* @return: array of users
-	*/
-    public function get_user_by_id_stdObj($uid) {
-        $users = array();
-        $this->db->select('*');
-        $this->db->from('cp_users');
-        $this->db->where("user_id", $uid);
-        $query = $this->db->get();
-        if ($query->num_rows() > 0) {
-            $result = $query->result();
-        } else {
-            $result = false;
-        }
-		return $result[0];
-    }
+
 }
 
 ?>
