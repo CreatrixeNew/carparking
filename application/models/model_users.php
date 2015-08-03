@@ -130,6 +130,22 @@ class model_users extends CI_Model {
         }
     }
     
+         function fetchSortEmployees($date,$order) {
+
+        $this->db->select('*');
+        $this->db->from('cp_users');
+        $this->db->where('user_joined_on',$date);
+        $this->db->order_by('user_created_at',$order);
+        $query = $this->db->get();
+//        echo $this->db->last_query();
+   
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+    }
+    
       public function publishStatus($val, $id) {
         $loggedInUserId = $this->session->userdata('user_id');
         $query = $this->db->query("update cp_users set user_status='" . $val . "',user_updated_at='" . date('Y-m-d H:i:s') . "',user_updated_by='" . $loggedInUserId . "' WHERE user_id =" . $id);
@@ -148,7 +164,24 @@ class model_users extends CI_Model {
             return false;
         }
     }
-
+	/*
+	* @desc: get user(s) by id
+	* @param: array of user id's, status of user (1 for enable or 0 for disabled)
+	* @return: array of users
+	*/
+    public function get_user_by_id_stdObj($uid) {
+        $users = array();
+        $this->db->select('*');
+        $this->db->from('cp_users');
+        $this->db->where("user_id", $uid);
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            $result = $query->result();
+        } else {
+            $result = false;
+        }
+		return $result[0];
+    }
 }
 
 ?>

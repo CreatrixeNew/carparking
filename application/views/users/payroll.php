@@ -58,15 +58,15 @@
                                                 <td>$2999</td>
                                                 <td ><?php echo "$" . $row['user_salary_rate']; ?></td>
                                                 <td>50</td>
-                                                <td><span class="color-icons money_dollar_co"></span> <a href="">Receipt Payment</a></td>
+                                                <td><span class="color-icons money_dollar_co"></span> <a href="<?php echo base_url()."users/proceedPayment/id/".$row['user_id']; ?>">Receipt Payment</a></td>
                                                 <td><span class="label label-success">PAID</span></td>
 
                                                 <td><div class="btn-group pull-right">
                                                         <button data-toggle="dropdown" class="btn dropdown-toggle"><i class="icon-cog"></i><span class="caret"></span></button>
                                                         <ul class="dropdown-menu">
                                                             <li><a href="<?php echo base_url()."users/view/id/".$row['user_id']; ?>"><i class="icon-file"></i> View User</a></li>
-                                                            <li><a href="#"><i class="icon-edit"></i> Salary History</a></li>
-                                                            <li><a href="salary_calculator.html"><i class="icon-minus-sign"></i>Calculate Salary</a></li>
+                                                            <li><a href="<?php echo base_url()."users/proceedPayment/id/".$row['user_id']; ?>"><i class="icon-edit"></i> Salary History</a></li>
+                                                            <li><a href="<?php echo base_url()."users/calculator/id/".$row['user_id']; ?>"><i class="icon-minus-sign"></i>Calculate Salary</a></li>
                                                         </ul>
                                                     </div></td>
                                 </tr><?php }} ?>

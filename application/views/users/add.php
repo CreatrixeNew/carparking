@@ -39,7 +39,7 @@
     });
 </script>
 <style>
-    select{width:281px;}
+    select{width:243px;}
     input[type="text"],[type="password"]{height:31px;}
 </style>
 <div class="container-fluid">
@@ -64,17 +64,17 @@
                                             <h6>Add Biography</h6>
                                         </li>
                                     </ul>
-                                    <form id="myform" class="form-horizontal well" method="post" action="<?php echo base_url() . "users/saveBio" ?>">
+                                    <form id="signupform" class="form-horizontal well" method="post" action="<?php echo base_url() . "users/saveBio" ?>">
                                         <div class="control-group">
                                             <label class="control-label" for="input01">First Name:</label>
                                             <div class="controls">
-                                                <input required type="text" class="input-xlarge text-tip" name="user_first_name" id="user_first_name" title="Enter First Name">
+                                                <input required type="text" class="span10" name="user_first_name" id="user_first_name" title="Enter First Name">
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="input01">Last Name:</label>
                                             <div class="controls">
-                                                <input required id="user_last_name" name="user_last_name" type="text" class="input-xlarge text-tip" id="input01" title="Enter Last Name">
+                                                <input required id="user_last_name" name="user_last_name" type="text" class="span10"  title="Enter Last Name">
                                             </div>
                                         </div>
                                         <div class="control-group">
@@ -100,37 +100,37 @@
                                         <div class="control-group">
                                             <label class="control-label" for="input01">Date of Birth:</label>
                                             <div class="controls">
-                                                <input required name="user_dob" type="text" class="input-xlarge text-tip" id="datepicker" title="Select Date of Birth">
+                                                <input required name="user_dob" type="text" class="span10" id="datepicker" title="Select Date of Birth">
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="input01">Phone:</label>
                                             <div class="controls">
-                                                <input required id="user_phone" name="user_phone" type="text" class="input-xlarge text-tip" id="input01" title="Enter Phone Number">
+                                                <input required id="user_phone" name="user_phone" type="text" class="span10" title="Enter Phone Number">
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="input01">Email:</label>
                                             <div class="controls">
-                                                <input id="user_email" name="user_email" type="text" class="input-xlarge text-tip" title="Enter Email">
+                                                <input required id="blabla" name="blabla" type="text" class="span10" title="Enter Email">
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="input02">Set Password </label>
                                             <div class="controls">
-                                                <input id="user_password" name="user_password" type="password" class="input-xlarge" id="input02" title="Enter Password"/>
+                                                <input id="user_password" name="user_password" type="password" class="span10" title="Enter Password"/>
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="input02">Re Type Password </label>
                                             <div class="controls">
-                                                <input id="user_c_password" type="password" class="input-xlarge" id="input02" title="Enter Password"/>
+                                                <input id="user_c_password" name="user_c_password" type="password" class="span10" title="Enter Password"/>
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label">Address</label>
                                             <div class="controls">
-                                                <textarea id="user_address" name="user_address" class="input-xlarge" rows="3"></textarea>
+                                                <textarea id="user_address" name="user_address" class="span10" rows="3"></textarea>
                                             </div>
                                         </div>
                                         <div style="margin-left: 32%;   width: 100%;">

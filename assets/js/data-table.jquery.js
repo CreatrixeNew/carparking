@@ -1060,6 +1060,7 @@
 					{
 						nTh.setAttribute('tabindex', oSettings.iTabIndex);
 						nTh.setAttribute('aria-controls', oSettings.sTableId);
+                                                nTh.setAttribute('id', "table_search");
 					}
 		
 					if ( oSettings.aoColumns[i].sClass !== null )
@@ -11141,6 +11142,7 @@
 	
 					nPrevious.setAttribute('aria-controls', oSettings.sTableId);
 					nNext.setAttribute('aria-controls', oSettings.sTableId);
+                                        nTh.setAttribute('id', "table_search");
 				}
 			},
 			

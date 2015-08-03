@@ -1,5 +1,19 @@
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
+        M_PATH = '<?php echo base_url(); ?>';
+
+        $("#sort").click(function() {
+
+            date = $("#datepicker").val();
+            sortBy = $("#sort_by").val();
+
+            if (date == "") {
+                $("#datepicker").css('border', '1px solid red');
+            }
+            else {
+                $("#filtered_table").load(M_PATH + "users/sortEmployees?date=" + date + "&sortBy=" + sortBy);
+            }
+        });
 
         $("#filter").change(function() {
 
@@ -7,7 +21,7 @@
 
         });
 
-        M_PATH = '<?php echo base_url(); ?>';
+
         $("#filter_submit").click(function() {
 
             keyword = $(".filter_field").val();
@@ -109,11 +123,11 @@
                 </div>
                 <input id="datepicker"  type="text" style="width:48%;">
 
-                <select style=" width: 49%;">
-                    <option>Ascending </option>
-                    <option>Descending</option>
+                <select style=" width: 49%;" id="sort_by">
+                    <option selected value="ASC">Ascending </option>
+                    <option value="DESC">Descending</option>
                 </select>
-                <a class="info_t btn btn-warning" href="#" style="width:94%">Sort</a> </div>
+                <a class="info_t btn btn-warning" id="sort" style="width:94%">Sort</a> </div>
         </div>
         <div class="span6">
             <div class="nonboxy-widget" style="  background: #fcfcfc none repeat scroll 0 0; border-color: #f3f3f3 #f3f3f3 #f3f3f3 #5bb75b;border-style: solid;border-width: 1px 1px 1px 4px; padding: 9px;">
@@ -195,14 +209,15 @@
                                                     </ul>
                                                 </div></td>
                                         </tr>
-                                    <?php }
+                                    <?php
+                                    }
                                 }
                                 ?>
 
                             </tbody>
                         </table>
                     </div>
-          
+
                 </div>
             </div>
         </div>

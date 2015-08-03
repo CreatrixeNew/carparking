@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class dashboard extends CI_Controller {
+class dashboard extends MY_Controller {
 
     public $layout = 'default_inner';
 

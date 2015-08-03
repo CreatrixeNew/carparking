@@ -100,13 +100,15 @@ $(function() {
     /*==Color Picker==*/
     $('.colorpicker').colorpicker();
     /*==Date Picker==*/
-    var d = new Date(1980, 2, 2);
-    $('#datepicker').datepicker({
-            defaultDate: new Date(2010, 8, 1) }
-            );
-    $('#datepicker2').datepicker({
+    var d = new Date(2010, 12, 30);
+    $('#date_from').datepicker({
+            defaultDate: new Date(2010, 12, 30) }
+	);
+    $('#date_to').datepicker({
             defaultDate: d }
-            );
+	);
+
+ 
     /*== Time Picker==*/
     
 //     $('#timepicker').timepicker({ scrollbar: 1, timeFormat: 'HH:mm:ss' });
@@ -460,19 +462,19 @@ $(function() {
                 minlength: 2,
                 remote: "users.php"
             },
-            password: {
+            user_password: {
                 required: true,
                 minlength: 5
             },
-            password_confirm: {
+            user_c_password: {
                 required: true,
                 minlength: 5,
-                equalTo: "#password"
+                equalTo: "#user_password"
             },
-            email: {
+            user_email: {
                 required: true,
-                email: true,
-                remote: "emails.php"
+                email: true
+                
             },
             dateformat: "required",
             terms: "required"
@@ -485,19 +487,18 @@ $(function() {
                 minlength: jQuery.format("Enter at least {0} characters"),
                 remote: jQuery.format("{0} is already in use")
             },
-            password: {
+            user_password: {
                 required: "Provide a password",
                 rangelength: jQuery.format("Enter at least {0} characters")
             },
-            password_confirm: {
+            user_c_password: {
                 required: "Repeat your password",
                 minlength: jQuery.format("Enter at least {0} characters"),
                 equalTo: "Enter the same password as above"
             },
-            email: {
+            user_email: {
                 required: "Please enter a valid email address",
-                minlength: "Please enter a valid email address",
-                remote: jQuery.format("{0} is already in use")
+                minlength: "Please enter a valid email address"
             }
         },
         // set this class to error-labels to indicate valid fields

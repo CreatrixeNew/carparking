@@ -181,3 +181,37 @@ function html_output_breadcrumbs($uri){
 </ul>
 <?PHP
 }
+
+function special_day_view_html_output( $day )
+{
+	
+	$html_string =	'<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3>Special Day Detail</h3>
+		</div>
+		<div class="modal-body">
+			<p> 
+				<h6>Special Day Name: </h6>
+				<b><h6>'. $day['special_day_name'].'</h6></b>
+			</p>
+			<p> 
+				<h6>Special Day Start Date: </h6>
+				<b><h6>'. date('d, F Y', strtotime($day['special_day_start_date'])).'</h6></b>
+			</p>
+			<p> 
+				<h6>Special Day End Date: </h6>
+				<b><h6>'. date('d, F Y', strtotime($day['special_day_end_date'])) .'</h6></b>
+			</p>
+			<p> 
+				<h6>Special Day Salary Rate: </h6>
+				<b><h6>'. $day['special_day_rate'] .'</h6></b>
+			</p>
+			
+		</div>
+		<div class="modal-footer">
+			<a href="'. base_url() . "company_setup/special_day_edit/id/" .$day['special_day_id'].'" class="btn btn-primary">Edit</a>
+			<a href="'. base_url() . "company_setup/special_day_delete/id/" .$day['special_day_id'].'" class="btn btn-primary">Remove</a>
+			<a href="#" class="btn" data-dismiss="modal">Close</a>
+		</div>' ;
+	 return $html_string;
+}
